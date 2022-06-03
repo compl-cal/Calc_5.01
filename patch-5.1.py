@@ -11,6 +11,7 @@ Stat_window_status = 0
 final_value = 0
 Error_case = 0
 Func_case =  0
+Stat_window = None
 
 tuple_font1=("Lucida Bright",10,"bold")
 tuple_font=("Lucida Bright",12,"bold")
@@ -97,14 +98,15 @@ def Clear():
         global lis_values, lis_operations
         lis_values, lis_operations = [], []
         final_value = 0
-        label_result.config(text="0")
+        label_result.config(text=final_value)
         Error_case = 0
 
 
 def Argument():
     global Func_case
+    phase = round(cmath.phase(final_value), 3) 
     if final_value:
-        label_result.config(text=("arg(" + str(final_value) + ") = " + str(cmath.phase(final_value)) + "rad"))
+        label_result.config(text=("arg(" + str(final_value) + ") = " + str(phase)+ "rad"))
         Func_case = 1
 
     else:
@@ -112,8 +114,9 @@ def Argument():
 
 def Modulus():
     global Func_case
+    mod = round(abs(final_value), 3)
     if final_value:
-        label_result.config(text=("|" + str(final_value) + "| = " + str(abs(final_value))))
+        label_result.config(text=("|" + str(final_value) + "| = " + str(mod)))
         Func_case = 1
 
     else:
@@ -180,7 +183,7 @@ def Solve_by_stat():
     label_result_stat = Label(Stat_window, width=30, height=1, text=stat_val, bg="#C9C7C7")
     label_result_stat.grid(row=2, column=0, columnspan=3, pady=5)
 
-Main_window.title('Basic Complex number calculator')
+Main_window.title('Complex number calculator')
 
 label2 = Label(Main_window, text="real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
 label2.grid(row=0, columnspan=1, column=0)
@@ -242,7 +245,7 @@ button_conj.grid(row=2, column=4, pady=5,)
 label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=35, font=tuple_font1)
 label_result.grid(row=2,column=0, columnspan=2,pady=10, padx=10)
 
-button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20,cursor="fleur")
+button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
 button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=2,padx=10)
 
 Main_window.mainloop()
