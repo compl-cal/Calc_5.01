@@ -128,10 +128,14 @@ def Conj():
 
 def Solve_by_stat():
     global Stat_window
-    global stat_val
-    stat_val = 0
-    Stat_window = Toplevel()
-    Stat_window.title("Solve using expression")
+    if not Stat_window:
+        global stat_val
+        stat_val = 0
+        Stat_window = Toplevel()
+        Stat_window.title("Solve using expression")
+        
+    else:
+        Stat_window.deiconify()
 
     def Solve():
         exp = Stat_Entry.get()
