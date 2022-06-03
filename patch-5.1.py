@@ -182,68 +182,68 @@ def Solve_by_stat():
 
 Main_window.title('Basic Complex number calculator')
 
-label2 = Label(Main_window, text="Enter the real part", width=20, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
-label2.grid(row=0, columnspan=2, column=0, padx=10,pady=5)
+label2 = Label(Main_window, text="real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label2.grid(row=0, columnspan=1, column=0)
 
-real_part = Entry(Main_window, width=25, bd=5)
-real_part.grid(row=1, columnspan=2, column=0, padx=10)
+real_part = Entry(Main_window, width=20, bd=5)
+real_part.grid(row=1, columnspan=1, column=0)
 
-label1 = Label(Main_window, text="Enter the imaginary part", width=20, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
-label1.grid(row=2, columnspan=2, column=0, padx=10)
+label1 = Label(Main_window, text="imaginary part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label1.grid(row=0, columnspan=1, column=1)
 
-imag_part = Entry(Main_window, width=25, bd=5)
-imag_part.grid(row=3, columnspan=2, column=0, pady=2, padx=10)
+imag_part = Entry(Main_window, width=20, bd=5)
+imag_part.grid(row=1, columnspan=1, column=1)
 
 img_add = PhotoImage(file="C:/Users/Admin/Desktop/proimg/plus_8.png")
 
 button_add = Button(Main_window, image=img_add, command=lambda : Operation_func("+"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)
-button_add.grid(row=0, column=2 )
+button_add.grid(row=0, column=2)
 
 img_subtract = PhotoImage(file="C:/Users/Admin/Desktop/proimg/minus_3.png")
 
 button_subtract = Button(Main_window, image=img_subtract, command=lambda : Operation_func("-"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)
-button_subtract.grid(row=1, column=2, pady=5)
+button_subtract.grid(row=0, column=3, pady=5,padx=10)
 
 img_multiply = PhotoImage(file="C:/Users/Admin/Desktop/proimg/multiply_3.png")
                      
 button_multiply = Button(Main_window, image=img_multiply, command=lambda : Operation_func("*"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)     
-button_multiply.grid(row=2, column=2, pady=5)
+button_multiply.grid(row=1, column=2, pady=5)
 
 img_divide = PhotoImage(file="C:/Users/Admin/Desktop/proimg/divide_3.png")
 
 button_divide = Button(Main_window, image=img_divide, command=lambda : Operation_func("/"), fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_divide.grid(row=3, column=2, pady=5)
+button_divide.grid(row=1, column=3, pady=5)
 
-img_arg= PhotoImage(file="C:/Users/Admin/Desktop/proimg/arg_1.png")
+img_clear= PhotoImage(file="C:/Users/Admin/Desktop/proimg/clear_3.png")
 
-button_arg = Button(Main_window, text="arg()", command=Argument,image=img_arg, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_arg.grid(row=0, column=3, pady=5)
-
-img_mod= PhotoImage(file="C:/Users/Admin/Desktop/proimg/mod_1.png")
-
-button_mod = Button(Main_window, text="mod()", command=Modulus, image=img_mod, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_mod.grid(row=1, column=3, pady=5)
-
-img_clear= PhotoImage(file="C:/Users/Admin/Desktop/proimg/clear_2.png")
-
-button_clear = Button(Main_window, text="Clear", command=Clear,  image=img_clear, fg="red", bg="#202020", width=50,height=110, borderwidth=0)
-button_clear.grid(row=3, column=3, pady=5,rowspan=2)
+button_clear = Button(Main_window, text="Clear", command=Clear,  image=img_clear, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
+button_clear.grid(row=2, column=2, pady=5)
 
 img_evaluate = PhotoImage(file="C:/Users/Admin/Desktop/proimg/eval_1.png")
 
 button_evaluate = Button(Main_window, text="=", command=Evaluate, image=img_evaluate, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_evaluate.grid(row=4, column=2, pady=5)
+button_evaluate.grid(row=2, column=3, pady=5)
+
+img_arg= PhotoImage(file="C:/Users/Admin/Desktop/proimg/arg_1.png")
+
+button_arg = Button(Main_window, text="arg()", command=Argument,image=img_arg, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
+button_arg.grid(row=0, column=4, pady=5)
+
+img_mod= PhotoImage(file="C:/Users/Admin/Desktop/proimg/mod_1.png")
+
+button_mod = Button(Main_window, text="mod()", command=Modulus, image=img_mod, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
+button_mod.grid(row=1, column=4, pady=5)
 
 img_conj = PhotoImage(file="C:/Users/Admin/Desktop/proimg/conj_2.png")
 
 button_conj = Button(Main_window, text="conj()", command=Conj, image=img_conj, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_conj.grid(row=2, column=3, pady=5,)
+button_conj.grid(row=2, column=4, pady=5,)
 
-label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=30, font=tuple_font1)
-label_result.grid(row=5,column=1, columnspan=1,pady=10, padx=10)
+label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=35, font=tuple_font1)
+label_result.grid(row=2,column=0, columnspan=2,pady=10, padx=10)
 
 button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20,cursor="fleur")
-button_solvebystat.grid(row = 5, column=2, pady=5, columnspan=2,padx=10)
+button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=2,padx=10)
 
 Main_window.mainloop()
                    
