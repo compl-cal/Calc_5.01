@@ -194,47 +194,47 @@ label1.grid(row=2, columnspan=2, column=0, padx=10)
 imag_part = Entry(Main_window, width=25, bd=5)
 imag_part.grid(row=3, columnspan=2, column=0, pady=2, padx=10)
 
-img_add = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/plus_7.png")
+img_add = PhotoImage(file="C:/Users/Admin/Desktop/proimg/plus_8.png")
 
 button_add = Button(Main_window, image=img_add, command=lambda : Operation_func("+"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)
 button_add.grid(row=0, column=2 )
 
-img_subtract = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/minus_1.png")
+img_subtract = PhotoImage(file="C:/Users/Admin/Desktop/proimg/minus_3.png")
 
 button_subtract = Button(Main_window, image=img_subtract, command=lambda : Operation_func("-"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)
 button_subtract.grid(row=1, column=2, pady=5)
 
-img_multiply = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/multiply_2.png")
+img_multiply = PhotoImage(file="C:/Users/Admin/Desktop/proimg/multiply_3.png")
                      
 button_multiply = Button(Main_window, image=img_multiply, command=lambda : Operation_func("*"), fg="red", bg="#202020", width=50, height=50, borderwidth=0)     
 button_multiply.grid(row=2, column=2, pady=5)
 
-img_divide = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_divide = PhotoImage(file="C:/Users/Admin/Desktop/proimg/divide_3.png")
 
 button_divide = Button(Main_window, image=img_divide, command=lambda : Operation_func("/"), fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_divide.grid(row=3, column=2, pady=5)
 
-img_arg= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_arg= PhotoImage(file="C:/Users/Admin/Desktop/proimg/arg_1.png")
 
 button_arg = Button(Main_window, text="arg()", command=Argument,image=img_arg, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_arg.grid(row=0, column=3, pady=5)
 
-img_mod= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_mod= PhotoImage(file="C:/Users/Admin/Desktop/proimg/mod_1.png")
 
 button_mod = Button(Main_window, text="mod()", command=Modulus, image=img_mod, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_mod.grid(row=1, column=3, pady=5)
 
-img_clear= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_clear= PhotoImage(file="C:/Users/Admin/Desktop/proimg/clear_2.png")
 
-button_clear = Button(Main_window, text="Clear", command=Clear,  image=img_clear, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
-button_clear.grid(row=3, column=3, pady=5)
+button_clear = Button(Main_window, text="Clear", command=Clear,  image=img_clear, fg="red", bg="#202020", width=50,height=110, borderwidth=0)
+button_clear.grid(row=3, column=3, pady=5,rowspan=2)
 
-img_evaluate = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_evaluate = PhotoImage(file="C:/Users/Admin/Desktop/proimg/eval_1.png")
 
 button_evaluate = Button(Main_window, text="=", command=Evaluate, image=img_evaluate, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_evaluate.grid(row=4, column=2, pady=5)
 
-img_conj = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+img_conj = PhotoImage(file="C:/Users/Admin/Desktop/proimg/conj_2.png")
 
 button_conj = Button(Main_window, text="conj()", command=Conj, image=img_conj, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_conj.grid(row=2, column=3, pady=5,)
