@@ -214,19 +214,29 @@ img_divide = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2
 button_divide = Button(Main_window, image=img_divide, command=lambda : Operation_func("/"), fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_divide.grid(row=3, column=2, pady=5)
 
-button_arg = Button(Main_window, text="arg()", command=Argument, width=4, bg="#C0ED66")
+img_arg= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+
+button_arg = Button(Main_window, text="arg()", command=Argument,image=img_arg, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_arg.grid(row=0, column=3, pady=5)
 
-button_mod = Button(Main_window, text="mod()", command=Modulus, width=4, bg="#C0ED66")
+img_mod= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+
+button_mod = Button(Main_window, text="mod()", command=Modulus, image=img_mod, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_mod.grid(row=1, column=3, pady=5)
 
-button_clear = Button(Main_window, text="Clear", command=Clear, width=4)
+img_clear= PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+
+button_clear = Button(Main_window, text="Clear", command=Clear,  image=img_clear, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_clear.grid(row=3, column=3, pady=5)
 
-button_evaluate = Button(Main_window, text="=", command=Evaluate, width=4)
+img_evaluate = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+
+button_evaluate = Button(Main_window, text="=", command=Evaluate, image=img_evaluate, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_evaluate.grid(row=4, column=2, pady=5)
 
-button_conj = Button(Main_window, text="conj()", command=Conj, width=4,  bg="#C0ED66")
+img_conj = PhotoImage(file="C:/Users/Admin/Desktop/Suhaa - G12/proimg/divide_2.png")
+
+button_conj = Button(Main_window, text="conj()", command=Conj, image=img_conj, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_conj.grid(row=2, column=3, pady=5,)
 
 label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=30, font=tuple_font1)
