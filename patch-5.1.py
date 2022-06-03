@@ -12,6 +12,9 @@ final_value = 0
 Error_case = 0
 Func_case =  0
 
+tuple_font1=("Lucida Bright",10,"bold")
+tuple_font=("Lucida Bright",12,"bold")
+
 def Operation_func(operation = None):
     global  Error_case
     try:
@@ -179,8 +182,6 @@ def Solve_by_stat():
 
 Main_window.title('Basic Complex number calculator')
 
-tuple_font=("Lucida Bright",12,"bold")
-
 label2 = Label(Main_window, text="Enter the real part", width=20, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
 label2.grid(row=0, columnspan=2, column=0, padx=10,pady=5)
 
@@ -227,8 +228,6 @@ button_evaluate.grid(row=4, column=2, pady=5)
 
 button_conj = Button(Main_window, text="conj()", command=Conj, width=4,  bg="#C0ED66")
 button_conj.grid(row=2, column=3, pady=5,)
-
-tuple_font1=("Lucida Bright",10,"bold")
 
 label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=30, font=tuple_font1)
 label_result.grid(row=5,column=1, columnspan=1,pady=10, padx=10)
