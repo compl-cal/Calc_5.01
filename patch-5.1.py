@@ -7,7 +7,6 @@ Main_window.configure(bg="#202020")
 
 
 lis_values, lis_operations = [], []
-Stat_window_status = 0
 final_value = 0
 Error_case = 0
 Func_case =  0
@@ -168,6 +167,12 @@ def Solve_by_stat():
         label_result_stat.config(text=stat_val)
         Stat_Entry.delete(0, END)
 
+    def close():
+        global Stat_window
+        Stat_window.destroy()
+        Stat_window = None        
+      
+
     Stat_Entry = Entry(Stat_window, width=40, bd =5)
     Stat_Entry.grid(row=0, column=0, columnspan=3,pady=5)
 
@@ -182,6 +187,8 @@ def Solve_by_stat():
 
     label_result_stat = Label(Stat_window, width=30, height=1, text=stat_val, bg="#C9C7C7")
     label_result_stat.grid(row=2, column=0, columnspan=3, pady=5)
+    
+    Stat_window.protocol("WM_DELETE_WINDOW", close)
 
 Main_window.title('Complex number calculator')
 
