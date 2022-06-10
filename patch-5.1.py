@@ -192,13 +192,13 @@ def Solve_by_stat():
 
 Main_window.title('Complex number calculator')
 
-label2 = Label(Main_window, text="real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label2 = Label(Main_window, text="Real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
 label2.grid(row=0, columnspan=1, column=0)
 
 real_part = Entry(Main_window, width=20, bd=5)
 real_part.grid(row=1, columnspan=1, column=0)
 
-label1 = Label(Main_window, text="imaginary part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label1 = Label(Main_window, text="Imaginary part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
 label1.grid(row=0, columnspan=1, column=1)
 
 imag_part = Entry(Main_window, width=20, bd=5)
