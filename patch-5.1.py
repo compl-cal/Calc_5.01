@@ -99,6 +99,16 @@ def Clear():
         final_value = 0
         label_result.config(text=final_value)
         Error_case = 0
+        
+def power():
+    global final_value
+    pow_val = float(label_power.get())
+    final_value = pow(final_value, pow_val)
+    real_part = round(final_value.real, 3)
+    imag_part = round(final_value.imag, 3)
+    final_value = complex(real_part, imag_part)
+    lis_values = [final_value]
+    label_result.config(text=lis_values)
 
 
 def Argument():
@@ -249,11 +259,17 @@ img_conj = PhotoImage(file="C:/Users/Admin/Desktop/proimg/conj_2.png")
 button_conj = Button(Main_window, text="conj()", command=Conj, image=img_conj, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_conj.grid(row=2, column=4, pady=5,)
 
-label_result = Label(Main_window, text="0", height=2, bg="#936BFF",fg="white", width=35, font=tuple_font1)
+label_result = Label(Main_window, text=final_value, height=2, bg="#936BFF",fg="white", width=35, font=tuple_font1)
 label_result.grid(row=2,column=0, columnspan=2,pady=10, padx=10)
 
 button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
 button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=2,padx=10)
+
+button_power = Button(Main_window, text="^", command=power, width=5)
+button_power.grid(row=3, column=3)
+
+label_power = Entry(Main_window, width=5, bd=5)
+label_power.grid(row=3, column=2)
 
 Main_window.mainloop()
                    
