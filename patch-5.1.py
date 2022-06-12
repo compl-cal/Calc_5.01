@@ -17,33 +17,35 @@ tuple_font=("Lucida Bright",12,"bold")
 
 def Operation_func(operation = None):
     global  Error_case
-    try:
-        imag = imag_part.get()
-        real = real_part.get()
-        if not real:
-            real = 0
-        else:
-            real = float(real)
-        if not imag:
-            imag = 0
-        else:
-            imag = float(imag)
-
-    except ValueError:
-        label_result.config(text="Invalid input")
-        real_part.delete(0, END)
-        imag_part.delete(0, END)
-        Error_case = 1
-
+    imag = imag_part.get()
+    real = real_part.get()
+    if (not real) and (not imag):
+         pass
     else:
-        z = complex(real, imag)
-        real_part.delete(0, END)
-        imag_part.delete(0, END)
-        lis_values.append(z)
+        try:
+            if not real:
+                real = 0
+            else:
+                real = float(real)
+            if not imag:
+               imag = 0
+            else:
+                imag = float(imag)
 
-        if operation:
-            lis_operations.append(operation)
-            pass
+        except ValueError:
+            label_result.config(text="Invalid input")
+            real_part.delete(0, END)
+            imag_part.delete(0, END)
+            Error_case = 1
+
+        else:
+            z = complex(real, imag)
+            real_part.delete(0, END)
+            imag_part.delete(0, END)
+            lis_values.append(z)
+
+            if operation:
+                lis_operations.append(operation)
 
 def Evaluate():
     global final_value
