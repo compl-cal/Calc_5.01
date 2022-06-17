@@ -108,6 +108,7 @@ def power():
     final_value = pow(final_value, pow_val)
     real_part = round(final_value.real, 3)
     imag_part = round(final_value.imag, 3)
+    label_power.delete(0, END)
     final_value = complex(real_part, imag_part)
     lis_values = [final_value]
     label_result.config(text=lis_values)
