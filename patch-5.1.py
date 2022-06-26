@@ -5,7 +5,6 @@ Main_window = Tk()
 Main_window.configure(bg="#202020")
 #Main_window.iconbitmap(r"C:\Users\admin\Desktop")
 
-
 lis_values, lis_operations = [], []
 final_value = 0
 Error_case = 0
@@ -89,7 +88,6 @@ def Evaluate():
                 final_value = final_value.real
             label_result.config(text=final_value)
 
-
 def Clear():
     global final_value
     global Func_case
@@ -116,7 +114,6 @@ def power():
     lis_values = [final_value]
     label_result.config(text=lis_values)
 
-
 def Argument():
     global Func_case
     phase = round(cmath.phase(final_value), 3) 
@@ -133,9 +130,9 @@ def Modulus():
     if final_value:
         label_result.config(text=("|" + str(final_value) + "| = " + str(mod)))
         Func_case = 1
-
     else:
         return
+
 def Conj():
     global final_value
     global lis_values
@@ -143,7 +140,6 @@ def Conj():
         final_value = final_value.conjugate()
         lis_values = [final_value]
         label_result.config(text=final_value)
-
     else:
         pass
 
@@ -188,9 +184,8 @@ def Solve_by_stat():
     def close():
         global Stat_window
         Stat_window.destroy()
-        Stat_window = None        
-      
-
+        Stat_window = None 
+        
     Stat_Entry = Entry(Stat_window, width=30, bd =3 )
     Stat_Entry.grid(row=0, column=0, columnspan=3,padx=5,pady=10)
 
