@@ -81,6 +81,9 @@ def Evaluate():
 
             lis_operations.pop(0)
         if Error_case == 0:
+            real_part = round(final_value.real, 3)
+            imag_part = round(final_value.imag, 3)
+            final_value = complex(real_part, imag_part)
             final_value = lis_values[0]
             if (final_value.imag == 0):
                 final_value = final_value.real
