@@ -186,35 +186,35 @@ def Solve_by_stat():
         Stat_window.destroy()
         Stat_window = None 
         
-    Stat_Entry = Entry(Stat_window, width=30, bd =3 )
+    Stat_Entry = Entry(Stat_window, width=35, bd =3 )
     Stat_Entry.grid(row=0, column=0, columnspan=3,padx=5,pady=10)
 
     button_solve = Button(Stat_window,image=img_sample_1, text="Solve",command=Solve, bg="#202020", width=50, height=50, borderwidth=0)
     button_solve.grid(row=1, column=0)
 
-    button_clear_stat = Button(Stat_window, text="Clear",image=img_sample_1, command=Clear_stat, bg="#202020", width=50, height=50, borderwidth=0)
+    button_clear_stat = Button(Stat_window, text="Clear",image=img_clear, command=Clear_stat, bg="#202020", width=50, height=50, borderwidth=0)
     button_clear_stat.grid(row=1, column=1)
 
     pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_sample_2,  bg="#202020", width=100, height=50, borderwidth=0)
     pass_button.grid(row=1,column=2,columnspan=2)
 
-    label_result_stat = Label(Stat_window, width=15, height=1, text=stat_val, bg="#C9C7C7")
-    label_result_stat.grid(row=3, column=0, columnspan=2, pady=5)
+    label_result_stat = Label(Stat_window,image=img_result, width=200, height=50, text=stat_val,bg="#202020",compound="center")
+    label_result_stat.grid(row=3, column=0, columnspan=3, pady=5,padx=5)
     
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
-img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/samp_1.png")
-img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/samp_2.png")
+img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
+img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_1.png")
 
 Main_window.title('Complex Number Calculator')
 
-label2 = Label(Main_window, text="Real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label2 = Label(Main_window, text="Real part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#ECF8F8")
 label2.grid(row=0, columnspan=2, column=0)
 
 real_part = Entry(Main_window, width=20, bd=5)
 real_part.grid(row=1, columnspan=2, column=0)
 
-label1 = Label(Main_window, text="Imaginary part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#75E9FC")
+label1 = Label(Main_window, text="Imaginary part", width=15, height=2, font=tuple_font, bg="#202020", foreground="#ECF8F8")
 label1.grid(row=0, columnspan=2, column=2)
 
 imag_part = Entry(Main_window, width=20, bd=5)
@@ -275,7 +275,10 @@ img_next = PhotoImage(file="C:/Users/Admin/Desktop/proimg/right_arrow.png")
 button_next = Button(Main_window, text="Solve by expression", image=img_next, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
 button_next.grid(row = 2, column=3, pady=5,padx=5)
 
-label_result = Label(Main_window, text=final_value, height=2, bg="#936BFF",fg="white", width=20, font=tuple_font1)
+img_result = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_2.png")
+tuple_font2=("Lucida Bright",15,"bold")
+
+label_result = Label(Main_window,image=img_result, text=final_value, height=50, bg="#202020",fg="white", width=200, font=tuple_font2,compound='center')
 label_result.grid(row=2,column=1, columnspan=2,pady=10, padx=5)
 
 button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
