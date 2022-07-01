@@ -204,7 +204,7 @@ def Solve_by_stat():
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
 img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
-img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_1.png")
+img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_2.png")
 
 Main_window.title('Complex Number Calculator')
 
