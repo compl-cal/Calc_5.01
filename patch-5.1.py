@@ -1,5 +1,12 @@
 from tkinter import *
 import cmath
+import mysql.connector
+
+mys = mysql.connector.connect(host="localhost", user="root", password="12345", database="calc")
+cursor = mys.cursor()
+
+if mys.is_connected():
+    print("Database integrated!")
 
 Main_window = Tk()
 Main_window.configure(bg="#202020")
