@@ -276,7 +276,7 @@ button_next = Button(Main_window, text="Solve by expression", image=img_next, fg
 button_next.grid(row = 2, column=3, pady=5,padx=5)
 
 img_result = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_2.png")
-tuple_font2=("Lucida Bright",15,"bold")
+tuple_font2=("Lucida Bright",10,"bold")
 
 label_result = Label(Main_window,image=img_result, text=final_value, height=50, bg="#202020",fg="white", width=200, font=tuple_font2,compound='center')
 label_result.grid(row=2,column=1, columnspan=2,pady=10, padx=5)
