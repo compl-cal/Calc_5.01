@@ -17,6 +17,7 @@ final_value = 0
 Error_case = 0
 Func_case =  0
 Stat_window = None
+prev_condition = 0
 
 tuple_font1=("Lucida Bright",10,"bold")
 tuple_font=("Lucida Bright",12,"bold")
@@ -149,6 +150,48 @@ def Conj():
         label_result.config(text=final_value)
     else:
         pass
+    
+def His_Prev():
+    global final_value
+    global lis_values
+    global prev_condition
+    global ind
+    global his_len, his
+    if prev_condition == 0:
+        ind = -1
+        cursor.execute("select * from history")
+        his = cursor.fetchall()
+        his_len = len(his)
+        prev_condition = 1
+        if his_len == 0:
+            pass
+        else:
+            val = eval(his[ind][0])
+            final_value = val
+            lis_values = [final_value]
+            label_result.config(text=final_value)
+
+    elif prev_condition == 1:
+        if ind == (-his_len):
+            pass
+        else:
+            ind += -1
+            val = eval(his[ind][0])
+            final_value = val
+            lis_values = [final_value]
+            label_result.config(text=final_value)
+
+def His_Next():
+    global ind, final_value, lis_values
+    if prev_condition == 0:
+        pass
+    elif prev_condition == 1:
+        if ind != -1:
+            ind += 1
+            val = eval(his[ind][0])
+            final_value = val
+            lis_values = [final_value]
+            label_result.config(text=final_value)
 
 #solve by stat window 2
 
