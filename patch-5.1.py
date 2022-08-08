@@ -95,6 +95,8 @@ def Evaluate():
             if (final_value.imag == 0):
                 final_value = final_value.real
             label_result.config(text=final_value)
+            st = "insert into history values('%s')" %(str(final_value),)
+            cursor.execute(st)
 
 def Clear():
     global final_value
@@ -224,6 +226,8 @@ def Solve_by_stat():
         label_result.config(text=final_value)
         lis_values = [final_value]
         Stat_window.iconify()
+        st = "insert into history values('%s')" %(str(final_value),)
+        cursor.execute(st)
 
     def Clear_stat():
         global stat_val
