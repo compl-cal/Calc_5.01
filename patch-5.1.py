@@ -97,6 +97,7 @@ def Evaluate():
             label_result.config(text=final_value)
             st = "insert into history values('%s')" %(str(final_value),)
             cursor.execute(st)
+            mys.commit()
 
 def Clear():
     global final_value
@@ -121,8 +122,13 @@ def power():
     imag_part = round(final_value.imag, 3)
     final_value = complex(real_part, imag_part)
     label_power.delete(0, END)
+    if (final_value.imag == 0):
+        final_value = final_value.real
     lis_values = [final_value]
     label_result.config(text=lis_values)
+    st = "insert into history values('%s')" % (str(final_value),)
+    cursor.execute(st)
+    mys.commit()
 
 def Argument():
     global Func_case
@@ -228,6 +234,7 @@ def Solve_by_stat():
         Stat_window.iconify()
         st = "insert into history values('%s')" %(str(final_value),)
         cursor.execute(st)
+        mys.commit()
 
     def Clear_stat():
         global stat_val
