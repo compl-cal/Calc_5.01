@@ -1,6 +1,7 @@
 from tkinter import *
 import cmath
 import mysql.connector
+from tkinter import messagebox
 
 mys = mysql.connector.connect(host="localhost", user="root", password="12345", database="calc")
 cursor = mys.cursor()
@@ -180,7 +181,9 @@ def His_Prev():
             label_result.config(text=final_value)
 
     elif prev_condition == 1:
-        if ind == (-his_len):
+        if his_len == 0:
+            pass
+        elif ind == (-his_len):
             pass
         else:
             ind += -1
@@ -201,6 +204,14 @@ def His_Next():
             lis_values = [final_value]
             label_result.config(text=final_value)
 
+            
+def clear_history():
+    answer = messagebox.askyesno("Clear History", "Do you really want to clear the history?")
+    if answer  == True:
+        cursor.execute("DELETE FROM history;")
+        mys.commit()
+    else:
+        pass
 #solve by stat window 2
 
 def Solve_by_stat():
@@ -352,6 +363,9 @@ button_power.grid(row=3, column=5)
 
 label_power = Entry(Main_window, width=5, bd=5)
 label_power.grid(row=3, column=4)
+
+button_clear_history = Button(Main_window, text="Clear history", command=clear_history)
+button_clear_history.grid(row=3, column=0)
 
 Main_window.mainloop()
                    
