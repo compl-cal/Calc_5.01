@@ -268,10 +268,14 @@ def Solve_by_stat():
     button_clear_stat.grid(row=1, column=1)
 
     pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_sample_2,  bg="#202020", width=100, height=50, borderwidth=0)
-    pass_button.grid(row=1,column=2,columnspan=2, padx=5)
+    pass_button.grid(row=1,column=2,columnspan=2)
 
     label_result_stat = Label(Stat_window,image=img_result, width=200, height=50, text=stat_val,bg="#202020",compound="center")
     label_result_stat.grid(row=3, column=1, columnspan=2, pady=5,padx=5)
+    
+    const_check = Checkbutton(Stat_window, text="Show constants", variable=const_state, onvalue = 1, offvalue = 0)
+    const_check.grid(row=4, column=0)
+
     
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
