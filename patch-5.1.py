@@ -216,6 +216,10 @@ def clear_history():
 
 def Solve_by_stat():
     global Stat_window
+    for i in con_list:
+        con[i[0]] = i[1]
+
+    print(con)
     if not Stat_window:
         global stat_val
         stat_val = 0
