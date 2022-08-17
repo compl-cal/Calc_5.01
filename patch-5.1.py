@@ -258,10 +258,10 @@ def Solve_by_stat():
         Stat_window.destroy()
         Stat_window = None 
         
-    Stat_Entry = Entry(Stat_window, width=35, bd =3 )
-    Stat_Entry.grid(row=0, column=0, columnspan=3,padx=5,pady=10)
+    Stat_Entry = Entry(Stat_window, width=45, bd =3 )
+    Stat_Entry.grid(row=0, column=0, columnspan=4,padx=5,pady=10)
 
-    button_solve = Button(Stat_window,image=img_sample_1, text="Solve",command=Solve, bg="#202020", width=50, height=50, borderwidth=0)
+    button_solve = Button(Stat_window,image=img_sample_1, text="Solve",command=Solve, bg="#202020", width=150, height=50, borderwidth=0)
     button_solve.grid(row=1, column=0)
 
     button_clear_stat = Button(Stat_window, text="Clear",image=img_clear, command=Clear_stat, bg="#202020", width=50, height=50, borderwidth=0)
@@ -271,7 +271,7 @@ def Solve_by_stat():
     pass_button.grid(row=1,column=2,columnspan=2)
 
     label_result_stat = Label(Stat_window,image=img_result, width=200, height=50, text=stat_val,bg="#202020",compound="center")
-    label_result_stat.grid(row=3, column=0, columnspan=3, pady=5,padx=5)
+    label_result_stat.grid(row=3, column=1, columnspan=2, pady=5,padx=5)
     
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
