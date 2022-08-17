@@ -270,8 +270,8 @@ def Solve_by_stat():
     pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_sample_2,  bg="#202020", width=100, height=50, borderwidth=0)
     pass_button.grid(row=1,column=2,columnspan=2, padx=5)
 
-    label_result_stat = Label(Stat_window,image=img_result, width=200, height=50, text=stat_val,bg="#202020",compound="center")
-    label_result_stat.grid(row=3, column=1, columnspan=2, pady=5,padx=5)
+    label_result_stat = Label(Stat_window,image=img_sample_3, width=250, height=50, text=stat_val,bg="#202020",compound="center")
+    label_result_stat.grid(row=3, column=0, columnspan=4, pady=5,padx=5)
     
     const_check = Checkbutton(Stat_window, text="Show constants", variable=const_state, onvalue = 1, offvalue = 0)
     const_check.grid(row=4, column=0)
@@ -281,6 +281,7 @@ def Solve_by_stat():
 
 img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
 img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_2.png")
+img_sample_3 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_4.png")
 
 Main_window.title('Complex Number Calculator')
 
