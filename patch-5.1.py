@@ -220,7 +220,7 @@ def Solve_by_stat():
         global stat_val
         stat_val = 0
         Stat_window = Toplevel()
-        Stat_window.title("Solve using expression")
+        Stat_window.title("Solve by Expression")
         Stat_window.configure(bg="#202020")
     else:
         Stat_window.deiconify()
