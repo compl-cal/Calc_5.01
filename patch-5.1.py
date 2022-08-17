@@ -268,7 +268,7 @@ def Solve_by_stat():
     button_clear_stat.grid(row=1, column=1)
 
     pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_sample_2,  bg="#202020", width=100, height=50, borderwidth=0)
-    pass_button.grid(row=1,column=2,columnspan=2)
+    pass_button.grid(row=1,column=2,columnspan=2, padx=5)
 
     label_result_stat = Label(Stat_window,image=img_result, width=200, height=50, text=stat_val,bg="#202020",compound="center")
     label_result_stat.grid(row=3, column=1, columnspan=2, pady=5,padx=5)
