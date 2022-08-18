@@ -223,6 +223,27 @@ def Solve_by_stat():
         con[i[0]] = i[1]
 
     print(con)
+        class Table:
+        def __init__(self, gui):
+
+            for i in range(total_rows):
+                for j in range(total_columns):
+                    print(i)
+                    if i == 0:
+                        self.entry = Entry(gui, width=20, bg='LightSteelBlue', fg='Black',
+                                           font=('Arial', 16, 'bold'))
+                    else:
+                        self.entry = Entry(gui, width=20, fg='blue',
+                                           font=('Arial', 16, ''))
+
+                    self.entry.grid(row=i+5, column=j)
+                    self.entry.insert(END, con_list[i][j])
+
+
+
+    total_rows = len(con_list)
+    total_columns = len(con_list[0])
+
     if not Stat_window:
         global stat_val
         stat_val = 0
@@ -232,6 +253,8 @@ def Solve_by_stat():
         Stat_window.iconbitmap("C:/Users/admin/Desktop/proimg/calcicon_3.ico")
     else:
         Stat_window.deiconify()
+        
+    table = Table(Stat_window)
 
     def Solve():
         exp = Stat_Entry.get()
@@ -366,9 +389,7 @@ tuple_font2=("Lucida Bright",10,"bold")
 label_result = Label(Main_window,image=img_result, text=final_value, height=50, bg="#202020",fg="white", width=200, font=tuple_font2,compound='center')
 label_result.grid(row=2,column=1, columnspan=2,pady=10, padx=5)
 
-img_solveby = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solveby_2.png")
-
-button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, image=img_solveby,  bg="#202020", width=200, height=50, borderwidth=0)
+button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
 button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=4,padx=10)
 
 img_power = PhotoImage(file="C:/Users/Admin/Desktop/proimg/exp_4.png")
