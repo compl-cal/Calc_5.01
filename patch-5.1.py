@@ -216,6 +216,9 @@ def clear_history():
 
 def Solve_by_stat():
     global Stat_window
+    cursor.execute("select * from constants;")
+    con_list = cursor.fetchall()
+    con = {}
     for i in con_list:
         con[i[0]] = i[1]
 
