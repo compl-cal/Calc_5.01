@@ -366,7 +366,9 @@ tuple_font2=("Lucida Bright",10,"bold")
 label_result = Label(Main_window,image=img_result, text=final_value, height=50, bg="#202020",fg="white", width=200, font=tuple_font2,compound='center')
 label_result.grid(row=2,column=1, columnspan=2,pady=10, padx=5)
 
-button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
+img_solveby = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solveby_2.png")
+
+button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, image=img_solveby,  bg="#202020", width=200, height=50, borderwidth=0)
 button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=4,padx=10)
 
 img_power = PhotoImage(file="C:/Users/Admin/Desktop/proimg/exp_4.png")
