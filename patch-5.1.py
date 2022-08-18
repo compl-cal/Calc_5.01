@@ -11,7 +11,7 @@ if mys.is_connected():
 
 Main_window = Tk()
 Main_window.configure(bg="#202020")
-#Main_window.iconbitmap(r"C:\Users\admin\Desktop")
+Main_window.iconbitmap("C:/Users/admin/Desktop/proimg/calcicon_3.ico")
 
 lis_values, lis_operations = [], []
 final_value = 0
@@ -229,6 +229,7 @@ def Solve_by_stat():
         Stat_window = Toplevel()
         Stat_window.title("Solve by Expression")
         Stat_window.configure(bg="#202020")
+        Stat_window.iconbitmap("C:/Users/admin/Desktop/proimg/calcicon_3.ico")
     else:
         Stat_window.deiconify()
 
