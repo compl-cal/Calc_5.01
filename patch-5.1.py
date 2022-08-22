@@ -294,26 +294,25 @@ def Solve_by_stat():
     Stat_Entry = Entry(Stat_window, width=45, bd =3 )
     Stat_Entry.grid(row=0, column=0, columnspan=4,padx=5,pady=10)
 
-    button_solve = Button(Stat_window,image=img_sample_1, text="Solve",command=Solve, bg="#202020", width=150, height=50, borderwidth=0)
+    button_solve = Button(Stat_window,image=img_win2_solve, text="Solve",command=Solve, bg="#202020", width=50, height=50, borderwidth=0)
     button_solve.grid(row=1, column=0)
 
-    button_clear_stat = Button(Stat_window, text="Clear",image=img_clear, command=Clear_stat, bg="#202020", width=50, height=50, borderwidth=0)
-    button_clear_stat.grid(row=1, column=1)
+    button_clear_stat = Button(Stat_window, text="Clear",image=img_win2_clear, command=Clear_stat, bg="#202020", width=50, height=50, borderwidth=0)
+    button_clear_stat.grid(row=1, column=1, padx=5)
 
-    pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_sample_2,  bg="#202020", width=100, height=50, borderwidth=0)
-    pass_button.grid(row=1,column=2,columnspan=2, padx=5)
+    pass_button = Button(Stat_window, text="Pass value to main window", command=Pass_to_main, image=img_win2_pass,  bg="#202020", width=150, height=50, borderwidth=0)
+    pass_button.grid(row=1,column=2,columnspan=3)
 
-    label_result_stat = Label(Stat_window,image=img_sample_3, width=250, height=50, text=stat_val,bg="#202020",compound="center")
+    label_result_stat = Label(Stat_window,image=img_win2_result, width=250, height=50, text=stat_val,fg="white",bg="#202020",compound="center",font=tuple_font2)
     label_result_stat.grid(row=3, column=0, columnspan=4, pady=5,padx=5)
     
-    const_check = Checkbutton(Stat_window, text="Show constants", variable=const_state, onvalue = 1, offvalue = 0, command=table_show)
-    const_check.grid(row=4, column=0)
-
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
-img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
-img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_3.png")
-img_sample_3 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_4.png")
+img_win2_solve = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_3.png")
+img_win2_clear = PhotoImage(file="C:/Users/Admin/Desktop/proimg/clear_6.png")
+img_win2_pass = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_3.png")
+img_win2_result = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_4.png")
+
 
 Main_window.title('Complex Number Calculator')
 
