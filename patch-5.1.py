@@ -236,7 +236,7 @@ def Solve_by_stat():
                         self.entry = Entry(gui, width=20, fg='blue',
                                            font=('Arial', 16, ''))
 
-                    self.entry.grid(row=i+5, column=j)
+                    self.entry.grid(row=i+5, column=j, columnspan=3)
                     self.entry.insert(END, con_list[i][j])
 
 
@@ -253,8 +253,6 @@ def Solve_by_stat():
         Stat_window.iconbitmap("C:/Users/admin/Desktop/proimg/calcicon_3.ico")
     else:
         Stat_window.deiconify()
-        
-    table = Table(Stat_window)
 
     def Solve():
         exp = Stat_Entry.get()
@@ -289,6 +287,10 @@ def Solve_by_stat():
         Stat_window.destroy()
         Stat_window = None 
         
+    def table_show():
+        if table_state.get() == 1:
+            table = Table(Stat_window)
+        
     Stat_Entry = Entry(Stat_window, width=45, bd =3 )
     Stat_Entry.grid(row=0, column=0, columnspan=4,padx=5,pady=10)
 
@@ -304,10 +306,9 @@ def Solve_by_stat():
     label_result_stat = Label(Stat_window,image=img_sample_3, width=250, height=50, text=stat_val,bg="#202020",compound="center")
     label_result_stat.grid(row=3, column=0, columnspan=4, pady=5,padx=5)
     
-    const_check = Checkbutton(Stat_window, text="Show constants", variable=const_state, onvalue = 1, offvalue = 0)
+    const_check = Checkbutton(Stat_window, text="Show constants", variable=const_state, onvalue = 1, offvalue = 0, command=table_show)
     const_check.grid(row=4, column=0)
 
-    
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
 img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
