@@ -311,7 +311,7 @@ def Solve_by_stat():
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
 img_sample_1 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_1.png")
-img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_2.png")
+img_sample_2 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/pass_3.png")
 img_sample_3 = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_4.png")
 
 Main_window.title('Complex Number Calculator')
@@ -388,6 +388,8 @@ tuple_font2=("Lucida Bright",10,"bold")
 
 label_result = Label(Main_window,image=img_result, text=final_value, height=50, bg="#202020",fg="white", width=200, font=tuple_font2,compound='center')
 label_result.grid(row=2,column=1, columnspan=2,pady=10, padx=5)
+
+img_solveby = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solveby_2.png")
 
 button_solvebystat = Button(Main_window, text="Solve by expression", command=Solve_by_stat, width=20)
 button_solvebystat.grid(row = 3, column=0, pady=5, columnspan=4,padx=10)
