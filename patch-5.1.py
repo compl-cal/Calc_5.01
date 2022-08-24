@@ -306,6 +306,10 @@ def Solve_by_stat():
     label_result_stat = Label(Stat_window,image=img_win2_result, width=250, height=50, text=stat_val,fg="white",bg="#202020",compound="center",font=tuple_font2)
     label_result_stat.grid(row=3, column=0, columnspan=4, pady=5,padx=5)
     
+    table_state = IntVar()
+    const_check = Checkbutton(Stat_window, text="Show constants",variable=table_state, onvalue=1, offvalue=0, command=table_show)
+    const_check.grid(row=4, column=0)
+    
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
 img_win2_solve = PhotoImage(file="C:/Users/Admin/Desktop/proimg/solve_3.png")
