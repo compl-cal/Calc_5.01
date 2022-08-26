@@ -348,12 +348,12 @@ button_conj.grid(row=2, column=6, pady=5,)
 
 img_previous = PhotoImage(file="C:/Users/Admin/Desktop/proimg/left_arrow.png")
 
-button_previous = Button(Main_window, text="Solve by expression", image=img_previous, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
+button_previous = Button(Main_window, text="Solve by expression", image=img_previous, fg="red", bg="#202020", width=50,height=50, borderwidth=0, command=His_Prev)
 button_previous.grid(row = 2, column=0, pady=5,padx=5)
 
 img_next = PhotoImage(file="C:/Users/Admin/Desktop/proimg/right_arrow.png")
 
-button_next = Button(Main_window, text="Solve by expression", image=img_next, fg="red", bg="#202020", width=50,height=50, borderwidth=0)
+button_next = Button(Main_window, text="Solve by expression", image=img_next, fg="red", bg="#202020", width=50,height=50, borderwidth=0, command=His_Next)
 button_next.grid(row = 2, column=3, pady=5,padx=5)
 
 img_result = PhotoImage(file="C:/Users/Admin/Desktop/proimg/bord_2.png")
