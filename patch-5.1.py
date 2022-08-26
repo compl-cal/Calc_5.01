@@ -216,33 +216,6 @@ def clear_history():
 
 def Solve_by_stat():
     global Stat_window
-    cursor.execute("select * from constants;")
-    con_list = cursor.fetchall()
-    con = {}
-    for i in con_list:
-        con[i[0]] = i[1]
-
-    print(con)
-        class Table:
-        def __init__(self, gui):
-
-            for i in range(total_rows):
-                for j in range(total_columns):
-                    print(i)
-                    if i == 0:
-                        self.entry = Entry(gui, width=20, bg='LightSteelBlue', fg='Black',
-                                           font=('Arial', 16, 'bold'))
-                    else:
-                        self.entry = Entry(gui, width=20, fg='blue',
-                                           font=('Arial', 16, ''))
-
-                    self.entry.grid(row=i+5, column=j, columnspan=3)
-                    self.entry.insert(END, con_list[i][j])
-
-
-
-    total_rows = len(con_list)
-    total_columns = len(con_list[0])
 
     if not Stat_window:
         global stat_val
@@ -305,10 +278,6 @@ def Solve_by_stat():
 
     label_result_stat = Label(Stat_window,image=img_win2_result, width=250, height=50, text=stat_val,fg="white",bg="#202020",compound="center",font=tuple_font2)
     label_result_stat.grid(row=3, column=0, columnspan=4, pady=5,padx=5)
-    
-    table_state = IntVar()
-    const_check = Checkbutton(Stat_window, text="Show constants",variable=table_state, onvalue=1, offvalue=0, command=table_show)
-    const_check.grid(row=4, column=0)
     
     Stat_window.protocol("WM_DELETE_WINDOW", close)
 
