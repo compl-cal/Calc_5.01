@@ -103,7 +103,7 @@ def Evaluate():
 def Clear():
     global final_value
     global Func_case
-    global  Error_case
+    global  Error_case, prev_condition
     if (Func_case == 1 ):
         label_result.config(text=final_value)
         Func_case = 0
@@ -113,7 +113,7 @@ def Clear():
         lis_values, lis_operations = [], []
         final_value = 0
         label_result.config(text=final_value)
-        Error_case = 0
+        Error_case, prev_condition = 0,0
         
 def power():
     global final_value
@@ -206,10 +206,12 @@ def His_Next():
 
             
 def clear_history():
+    global prev_condition
     answer = messagebox.askyesno("Clear History", "Do you really want to clear the history?")
     if answer  == True:
         cursor.execute("DELETE FROM history;")
         mys.commit()
+        prev_condition = 0
     else:
         pass
 #solve by stat window 2
