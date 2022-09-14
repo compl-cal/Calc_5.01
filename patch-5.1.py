@@ -382,7 +382,7 @@ button_power.grid(row=3, column=5)
 label_power = Entry(Main_window, width=5, bd=5)
 label_power.grid(row=3, column=4)
 
-button_clear_history = Button(Main_window, text="Clear history", command=clear_history)
+button_clear_history = Button(Main_window, text="Clear history",image="img_clearhistory", command=clear_history)
 button_clear_history.grid(row=3, column=0)
 
 Main_window.mainloop()
